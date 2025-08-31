@@ -1,16 +1,16 @@
 class Solution {
     public int numIdenticalPairs(int[] nums) {
-        int n = nums.length;
+        int[] arr = new int[101]; //number will is of range 0 - 100;
         int count = 0;
-        for(int i = 0; i < n; i++){
-            for(int j = n-1; j > i ; j--){
-                if( nums[i] == nums [j] ){
-                    count++;
-                }
-            }
+    //    count how many time number occur in nums arra and store it into arr
+        for( int num : nums){
+            arr[num]++;
+        }
+
+        for( int i : arr){
+            count += i* (i-1) /2;
         }
         return count;
-        
-        
+
     }
 }
