@@ -1,20 +1,13 @@
 class Solution {
     public int[] createTargetArray(int[] nums, int[] index) {
-        // int[] target = new int[nums.length];
-        // for( int i = 0; i < nums.length ; i++){
-        //     int tindex = index[i];
-        //     int telement = nums[i];
-        //     target[tindex] = telement;
-        // }
-        // return target;
-
-        ArrayList<Integer> list = new ArrayList <> ();
-        for(int i = 0 ;i<nums.length ;i++){
-            int tindex = index[i];
-            int telem = nums[i];
-            list.add(tindex,telem);
+        ArrayList<Integer>list  = new ArrayList<>();
+        int[] target = new int[nums.length];
+        for(int i = 0; i < nums.length ; i++ ){
+            list.add(index[i],nums[i]);
         }
-        int[] arr = list.stream().mapToInt(Integer::intValue).toArray();
-        return arr;
+        for(int i = 0; i < list.size(); i++){ //list convert into arr;
+            target[i] = list.get(i);
+        }
+        return target;
     }
 }
