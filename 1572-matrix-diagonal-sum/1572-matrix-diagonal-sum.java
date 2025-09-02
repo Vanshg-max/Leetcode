@@ -7,7 +7,8 @@ class Solution {
         sum += arr[i][i];
         sum += arr[i][n-1-i];
     }
-    if(arr.length %2 == 1){
+    if(arr.length %2 == 1) // if matrix is odd then subtract middle element cuz its added twice
+    {
         sum -= arr[n/2][n/2];
     }
     return sum;
