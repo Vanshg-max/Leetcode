@@ -12,7 +12,7 @@ class Solution {
                 i--;// move to the next left digit
             }
             // Get the last digit of k ->this becomes part of result
-            list.add(0,k%10);
+            list.addFirst(k%10);
             // Carry->remove the last digit from k
             k /=10;
         }
