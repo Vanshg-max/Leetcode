@@ -1,35 +1,32 @@
 class Solution {
     public List<Integer> luckyNumbers(int[][] matrix) {
-        ArrayList<Integer> rowMinlist = new ArrayList<>();
-        // first find min vakueof each row store in row min list;
-        for(int i = 0; i < matrix.length;i++){
-            int rowMin = Integer.MAX_VALUE;
-            for(int j = 0; j < matrix[i].length; j++){
-                   rowMin = Math.min(rowMin,matrix[i][j]);
-            }
-            rowMinlist.add(rowMin);
+     
+     int row = matrix.length;
+     int col = matrix[0].length;
+
+    int maxMinRow = Integer.MIN_VALUE;
+     for( int i = 0; i < row; i++ ){
+        int minValue = matrix[i][0];
+        for(int j = 0; j< col; j++ ){
+            minValue = Math.min(minValue,matrix[i][j]);
+
         }
+        maxMinRow = Math.max(maxMinRow,minValue);
 
-        // now sotring max element of each column in colMaxlist
-         ArrayList<Integer> colMaxlist = new ArrayList<>();
-         for(int i = 0; i < matrix[0].length; i++){
-            int colMax = Integer.MIN_VALUE;
-            for(int j = 0;j < matrix.length ; j++){
-                colMax = Math.max(colMax,matrix[j][i]);
-                
-            }
-            colMaxlist.add(colMax);
-         }
+     }
+     ArrayList<Integer> luckynumber = new ArrayList<>();
 
-        //  now checking lucky number 
-        ArrayList<Integer> luckyNumber = new ArrayList<>();
-
-        for(int num : rowMinlist){
-            if(colMaxlist.contains(num)){
-                luckyNumber.add(num);
-            }
+     for(int i = 0; i < col; i++ ){
+          int maxValue = matrix[0][i];
+        for(int j = 0; j < row; j++){
+            maxValue = Math.max(maxValue,matrix[j][i]);
         }
-        return luckyNumber;
+        if(maxValue == maxMinRow){
+            luckynumber.add(maxValue);
+        }
+     }
+        
+        return luckynumber;
 
         
     }
