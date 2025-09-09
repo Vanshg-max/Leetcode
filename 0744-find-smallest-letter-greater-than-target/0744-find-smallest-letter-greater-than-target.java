@@ -12,7 +12,7 @@ class Solution {
                 start = mid + 1;
             }
         }
-        return (start < arr.length) ? arr[start] : 'x';
+        return (start < arr.length) ? arr[start] : arr[0];
 
 
     }
