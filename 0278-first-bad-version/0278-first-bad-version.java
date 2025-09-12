@@ -5,11 +5,11 @@ public class Solution extends VersionControl {
     public int firstBadVersion(int n) {
         int start = 1;
         int end = n ;
-        int min = Integer.MAX_VALUE;
+        int ans = n;
         while (start <= end){
             int mid = start + (end - start) /2 ;
             if(isBadVersion(mid)){
-                min = Math.min(min,mid);
+                ans = mid;
                 end = mid - 1;
             }
             else{
