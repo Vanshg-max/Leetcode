@@ -8,7 +8,7 @@ class Solution {
 
     while(start<=end){
         int mid = start + (end-start) /2;
-        int square = (long) mid*mid;
+        long square = (long) mid*mid;
         if(square == x){
             return mid;
         }
