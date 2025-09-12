@@ -12,7 +12,7 @@ public class Solution extends VersionControl {
                 min = Math.min(min,mid);
                 end = mid - 1;
             }
-            if(isBadVersion(mid)== false){
+            else{
                 start = mid + 1;
             }
             
