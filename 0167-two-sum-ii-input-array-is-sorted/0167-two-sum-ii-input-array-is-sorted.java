@@ -1,35 +1,24 @@
 class Solution {
     public int[] twoSum(int[] numbers, int target) {
+        int left = 0;
+        int right = numbers.length - 1;
         
-        int index2 =0;
-        for(int i = 0;i<numbers.length;i++){
+        while (left < right) {
+            int sum = numbers[left] + numbers[right];
             
-            int val =  target-numbers[i] ;
-           index2 = binarysearch(numbers,val,i+1);
-            if(index2>=0){
-                return new int []{i+1,index2+1};
+            if (sum == target) {
+                
+                return new int[] {left + 1, right + 1};
+                
             }
-           
-        }
-        return new int[] {-1,-1};
-
-        
-    }
-    public int binarysearch(int[] arr , int target, int start){
-        
-        int end = arr.length-1;
-        while(start<=end){
-            int mid = start + (end - start)/2;
-            if(arr[mid] == target){
-                return mid;
-            }
-            else if( arr[mid]< target){
-                start = mid +1;
-            }
-            else{
-                end = mid - 1;
+            
+            if (sum < target) {
+                left++;  // need a bigger sum, ++left pointer right
+            } else {
+                right--; // need a smaller sum,  ++ right pointer left
             }
         }
-        return -1;
+        
+        return new int[] {-1, -1};
     }
 }
