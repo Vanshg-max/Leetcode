@@ -18,9 +18,10 @@ class Solution {
         if(pos.size()==0){
             for(int i = 0; i<neg.size(); i++){
                 neg.set(i,neg.get(i)*neg.get(i));
-                Collections.reverse(neg);
+                
                 
             }
+            Collections.reverse(neg);
              return neg.stream().mapToInt(Integer::intValue).toArray();
         }
 
