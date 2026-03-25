@@ -5,14 +5,14 @@ public:
         int cols = grid[0].size();
         long long totalSum = 0;
 
-        // 1. Calculate Total Sum
+        
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 totalSum += grid[i][j];
             }
         }
 
-        // If total is odd, we can't split it equally into integers
+        
         if (totalSum % 2 != 0) return false;
         long long target = totalSum / 2;
 
