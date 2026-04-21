@@ -7,7 +7,7 @@ public:
         sort(nums.begin(),nums.end());
 
         while(i < n-1){
-            if(nums[i] = nums[i+1]){
+            if(nums[i] == nums[i+1]){
                 count++;
                 if(count > n/2){
                     return nums[i];
