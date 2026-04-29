@@ -11,18 +11,15 @@
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
-        if(head == NULL) return NULL;
+        // Using Slow and fast pointer (tortoise and hare algorithm)
         ListNode* slow = head;
         ListNode* fast = head;
-        while(fast != NULL && fast ->next != NULL ){
-            slow = slow ->next;
-            if(fast ->next == NULL)  return slow;
-            fast = fast ->next ->next;
+
+        while(fast != NULL && fast -> next != NULL){
+            slow = slow -> next;
+            fast = fast -> next -> next;
         }
         return slow;
-        return NULL;
-
-
         
     }
 };
