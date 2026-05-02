@@ -12,10 +12,14 @@ public:
         ListNode* slow = head;
         ListNode* fast = head;
 
+        if(head == nullptr){
+            return false;
+        }
+
         while(fast != nullptr && fast-> next != nullptr){
-            if(slow == fast ) return true;
             fast = fast -> next -> next;
             slow = slow -> next;
+            if(slow == fast ) return true;
         }
         return false;
         
