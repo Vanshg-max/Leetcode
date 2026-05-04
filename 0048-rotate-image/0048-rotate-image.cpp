@@ -1,27 +1,23 @@
 class Solution {
 public:
-    void transpose(vector<vector<int>>& matrix){
-        int row = matrix.size();
-        for(int i=0; i<row; i++){
-            for(int j=i; j<row; j++ ){
+    void transpose(vector<vector<int> >&matrix){
+        for(int i= 0; i<matrix.size(); i++){
+            for(int j=i; j< matrix.size(); j++){
                 swap(matrix[i][j],matrix[j][i]);
             }
         }
     }
 
     void rev(vector<vector<int>> &matrix){
-        int row = matrix.size();
-        int col = matrix[0].size();
         
-        for(int i=0; i<row; i++){
+        for(int i=0; i<matrix.size(); i++){
             int low = 0;
-            int high = row-1;
-
-            while(low<=high){
-                swap(matrix[i][low],matrix[i][high]);
-                low++;
-                high--;
-            }
+        int high = matrix.size()-1;
+        while(low <= high){
+            swap(matrix[i][low],matrix[i][high]);
+            low++;
+            high--;
+        }
         }
 
     }
